@@ -110,19 +110,17 @@
             const app = initializeApp(firebaseConfig);
             const analytics = getAnalytics(app);
             const db = getDatabase();
+            var counter = 0;
 
             //var text = document.getElementById("text");
             document.getElementById("display").addEventListener("click",function writeUserData(text)
             {
+                counter++;
                 text = document.getElementById("text").value
-                set(ref(db, 'website_data/' ), {
+                set(ref(db, 'website_data/' + counter), {
                     display_text : text
                 });
             });
-
-            
-
-
 
         </script>
     </body>
