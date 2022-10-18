@@ -115,7 +115,7 @@
             document.getElementById("display").addEventListener("click",function writeUserData(text)
             {
                 text = document.getElementById("text").value
-                set(ref(db), {
+                set(ref(db, 'website_data/' ), {
                     display_text : text
                 });
             });
