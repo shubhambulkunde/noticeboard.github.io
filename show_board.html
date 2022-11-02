@@ -76,21 +76,36 @@
                     <strong>Example textarea</strong>
                 </label>
                 <textarea class="form-control" id="text" rows="3"></textarea>
-                <a id="display" type="button" class="px-3 py-2 lg:px-4 lg:py-3 bg-pink-700 text-gray-200 text-xs font-semibold rounded hover:bg-sky-600 hover:text-white text-lg" > Display</a>
+                <a id="display" type="button"
+                    class="px-3 py-2 lg:px-4 lg:py-3 bg-pink-700 text-gray-200 text-xs font-semibold rounded hover:bg-sky-600 hover:text-white text-lg">
+                    Display</a>
             </div>
-            
             <br>
-            
         </div>
-        <div class="d-flex container justify-content-center"><p><strong>a proper schedule base software release soon....</strong></p></div>
+        <div class="d-flex container justify-content-center">
+            <p><strong>a proper schedule base software release soon....</strong></p>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <div class=" btn my-5 mx-4 px-3 py-2 lg:px-4 lg:py-3 bg-lime-600 text-white font-bold rounded text-xxl"
+                type="button">
+                <span id="test">00</span>
+            </div>
+        </div>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="bundle.js"></script>
-         <!-- firebase -->
+        <!-- <script src="bundle.js"></script> -->
+        <!-- firebase -->
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
             import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
-            import { getDatabase, ref, set  } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
+            import {
+                getDatabase,
+                ref,
+                set,
+                onValue,
+                child,
+                get
+            } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -109,20 +124,39 @@
 
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
+            //const analytics = getAnalytics(app);
             const db = getDatabase();
+            const dbRef = ref(getDatabase());
             //var counter = 0;
 
             //var text = document.getElementById("text");
-            document.getElementById("display").addEventListener("click",function writeUserData(text)
-            {
+
+            //Writing the data with an event
+            document.getElementById("display").addEventListener("click", function writeUserData(text) {
                 //counter++;
                 text = document.getElementById("text").value
                 set(ref(db, 'website_data/'), {
-                    display_text : text
+                    display_text: text
                 });
             });
 
+            // Reading the data
+            const ReadData = ref(db, 'website_data/display_text');
+            onValue(ReadData, (snapshot) => {
+                const data = snapshot.val();
+                //updateReadData(postElement, data);
+            });
+
+            get(child(dbRef, `website_data/display_text`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    console.log(snapshot.val());
+                    document.getElementById('test').innerHTML = snapshot.val();
+                } else {
+                    console.log("No data available");
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
 
         </script>
     </body>
