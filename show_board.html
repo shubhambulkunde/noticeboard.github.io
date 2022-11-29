@@ -36,6 +36,38 @@
                 color: #555;
             }
 
+            .styled-table {
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 0.9em;
+                font-family: sans-serif;
+                min-width: 400px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .styled-table thead tr {
+                background-color: #1c7cd0;
+                color: #ffffff;
+                text-align: left;
+            }
+
+            .styled-table th,
+            .styled-table td {
+                padding: 12px 15px;
+            }
+
+            .styled-table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
+
+            .styled-table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+
+            .styled-table tbody tr:last-of-type {
+                border-bottom: 2px solid #1c7cd0;
+            }
+
         </style>
     </head>
 
@@ -53,7 +85,7 @@
                 <div class=" md:flex items-center py-4 ">
                     <ul class="flex items-center space-x-8">
                         <li>
-                            <a class="hover:text-pink-600 font-semibold text-xl" href="./index.html">Home</a>
+                            <a class="hover:text-pink-600 font-semibold text-xl" href="./home.html">Home</a>
                         </li>
                         <li>
                             <a href="#" class="hover:text-pink-600 font-semibold text-xl">Team</a>
@@ -62,7 +94,7 @@
                             <a class="hover:text-pink-600  font-semibold text-xl" href="./project.html">Projects</a>
                         </li>
                         <li>
-                            <a class="hover:text-pink-600  font-semibold text-xl" href="#">Resources</a>
+                            <a class="hover:text-pink-600  font-semibold text-xl" href="#">Gallary</a>
                         </li>
                     </ul>
                 </div>
@@ -71,94 +103,128 @@
         <hr class="opacity-50">
         <!-- div -->
         <div class="d-flex container justify-content-center">
-            <div class="col-lg-5 my-5 ">
-                <label class="d-flex form-label justify-content-center">
-                    <strong>Example textarea</strong>
-                </label>
-                <textarea class="form-control" id="text" rows="3"></textarea>
-                <a id="display" type="button"
-                    class="px-3 py-2 lg:px-4 lg:py-3 bg-pink-700 text-gray-200 text-xs font-semibold rounded hover:bg-sky-600 hover:text-white text-lg">
-                    Display</a>
+            <div class=" my-5 mx-5">
+                <!-- table -->
+                <div class="container d-flex justify-content-center">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Board no.</th>
+                                <th>Details</th>
+                                <th>Current Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Board no.1</td>
+                                <td>DL LAB</td>
+                                <td><span id="DL">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.2</td>
+                                <td>CG LAB</td>
+                                <td><span id="CG">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.3</td>
+                                <td>INT LAB</td>
+                                <td><span id="INT">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.4</td>
+                                <td>SL-1 LAB</td>
+                                <td><span id="SL-1">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.5</td>
+                                <td>SL-2 LAB</td>
+                                <td><span id="SL-2">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.6</td>
+                                <td>CR-1</td>
+                                <td><span id="CR-1">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.7</td>
+                                <td>CR-2</td>
+                                <td><span id="CR-2">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.8</td>
+                                <td>CR-3</td>
+                                <td><span id="CR-3">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.9</td>
+                                <td>MP LAB</td>
+                                <td><span id="MP">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.10</td>
+                                <td>HW LAB</td>
+                                <td><span id="HW">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.11</td>
+                                <td>SL-3 LAB</td>
+                                <td><span id="SL-3">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.12</td>
+                                <td>SL-4 LAB</td>
+                                <td><span id="SL-4">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.13</td>
+                                <td>CR-4</td>
+                                <td><span id="CR-4">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.14</td>
+                                <td>FPL LAB</td>
+                                <td><span id="FPL">.....</span></td>
+                            </tr>
+                            <tr>
+                                <td>Board no.15</td>
+                                <td>PG LAB</td>
+                                <td><span id="PG">.....</span></td>
+                            </tr>
+                            <!-- and so on... -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <br>
+                <div class=" d-flex justify-content-center">
+                    <a id="edit" type="button"
+                        class="px-3 py-2 lg:px-4 lg:py-3 bg-sky-700 text-white text-xs font-semibold rounded hover:bg-red-600 hover:text-white text-lg"
+                        href="https://docs.google.com/spreadsheets/d/1Fd-FleFgCvXJgYJKGXiy2Msqp1oB8RoW1ZEGY_gCpa0/edit?usp=sharing">
+                        Edit the Schedule</a>
+                </div>
+                <div class=" container col-lg-7 my-5">
+                    <label class="form-label ">
+                        <strong>Common notice board</strong>
+                    </label><br>
+                    <p>(*this notice will be visible to over all display in the dept.)</p>
+                    <br>
+                    <textarea class="form-control" id="text" rows="3"></textarea>
+                    <a id="submit" type="button"
+                        class=" my-2 px-3 py-2 lg:px-4 lg:py-3 bg-pink-700 text-gray-200 text-xs font-semibold rounded hover:bg-sky-700 hover:text-white text-lg">
+                        Display</a>
+                </div>
             </div>
-            <br>
         </div>
-        <div class="d-flex container justify-content-center">
-            <p><strong>a proper schedule base software release soon....</strong></p>
-        </div>
-        <div class="container d-flex justify-content-center">
-            <div class=" btn my-5 mx-4 px-3 py-2 lg:px-4 lg:py-3 bg-lime-600 text-white font-bold rounded text-xxl"
-                type="button">
-                <span id="test">00</span>
-            </div>
-        </div>
+        <br>
+
         <script src="https://cdn.tailwindcss.com"></script>
-        <!-- <script src="bundle.js"></script> -->
-        <!-- firebase -->
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
-            import {
-                getDatabase,
-                ref,
-                set,
-                onValue,
-                child,
-                get
-            } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-database.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-                apiKey: "AIzaSyBRJph0yxSeE3fN_KsUr20p1JI70KsdkSU",
-                authDomain: "notice-board-98214.firebaseapp.com",
-                databaseURL: "https://notice-board-98214-default-rtdb.firebaseio.com",
-                projectId: "notice-board-98214",
-                storageBucket: "notice-board-98214.appspot.com",
-                messagingSenderId: "389033309038",
-                appId: "1:389033309038:web:a370df2638f06c95e8877f",
-                measurementId: "G-XHPDGB6341"
-            };
-
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            //const analytics = getAnalytics(app);
-            const db = getDatabase();
-            const dbRef = ref(getDatabase());
-            //var counter = 0;
-
-            //var text = document.getElementById("text");
-
-            //Writing the data with an event
-            document.getElementById("display").addEventListener("click", function writeUserData(text) {
-                //counter++;
-                text = document.getElementById("text").value
-                set(ref(db, 'website_data/'), {
-                    display_text: text
-                });
-            });
-
-            // Reading the data
-            const ReadData = ref(db, 'website_data/display_text');
-            onValue(ReadData, (snapshot) => {
-                const data = snapshot.val();
-                //updateReadData(postElement, data);
-            });
-
-            get(child(dbRef, `website_data/display_text`)).then((snapshot) => {
-                if (snapshot.exists()) {
-                    console.log(snapshot.val());
-                    document.getElementById('test').innerHTML = snapshot.val();
-                } else {
-                    console.log("No data available");
-                }
-            }).catch((error) => {
-                console.error(error);
-            });
-
-        </script>
+        <script type="module" src="Monday.js"></script>
+        <script type="module" src="Tuesday.js"></script>
+        <script type="module" src="Wednesday.js"></script>
+        <script type="module" src="Thursday.js"></script>
+        <script type="module" src="Friday.js"></script>
+        <script type="module" src="Saturday.js"></script>
     </body>
     </head>
 

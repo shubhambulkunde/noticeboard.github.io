@@ -71,7 +71,7 @@
         </style>
     </head>
 
-    <body>
+    <body onload="setInterval(displayTime)">
         <!-- 	test 1 -->
         <div
             class="conatiner flex-wrap p-6 bg-white relative pt-6 lg:pt-8 flex items-center justify-between text-slate-700 font-semibold text-sm leading-6 dark:text-slate-200">
@@ -85,7 +85,7 @@
                 <div class=" md:flex items-center py-4 ">
                     <ul class="flex items-center space-x-8">
                         <li>
-                            <a class="hover:text-pink-600 font-semibold text-xl" href="./index.html">Home</a>
+                            <a class="hover:text-pink-600 font-semibold text-xl" href="./home.html">Home</a>
                         </li>
                         <li>
                             <a href="#" class="hover:text-pink-600 font-semibold text-xl">Team</a>
@@ -94,47 +94,51 @@
                             <a class="hover:text-pink-600  font-semibold text-xl" href="./project.html">Projects</a>
                         </li>
                         <li>
-                            <a class="hover:text-pink-600  font-semibold text-xl" href="#">Resources</a>
+                            <a class="hover:text-pink-600  font-semibold text-xl" href="#">Gallary</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
         <hr class="opacity-50">
-        <!-- div -->
+        <!-- table -->
         <div class="container d-flex justify-content-center">
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>projects</th>
-                        <th>Details</th>
+                        <th>Projects</th>
                         <th>Status</th>
+                        <th>Team</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Show Board</td>
+                        <td id="col1">Notice Board</td>
+                        <td> Project Completed </td>
+                        <td> Member - Shubham Bulkunde <br>Guidance - prof. swati bhonde </td>
                         <td><a href="./show_board.html" class="justify-center px-3 py-2
                             lg:px-4 lg:py-3 bg-emerald-700 text-gray-200
                             text-xs font-semibold rounded
                             hover:bg-emerald-500 hover:text-white text-lg ">View</a></td>
-                        <td>hardware - done <br> resources will realese soon..</td>
                     </tr>
                     <tr>
-                        <td>Motion Sensor</td>
+                        <td id="col2">Auto lighting</td>
+                        <td>not started yet....</td>
+                        <td>not available....</td>
                         <td><a href="#" type="button" class="justify-center px-3 py-2
                             lg:px-4 lg:py-3 bg-emerald-700 text-gray-200
                             text-xs font-semibold rounded
                             hover:bg-emerald-500 hover:text-white text-lg ">View</a></td>
-                        <td>not started</td>
                     </tr>
                     <tr>
-                        <td>Auto Attendance</td>
+                        <td id="col3">Auto Attendance</td>
+                        <td>not started yet....</td>
+                        <td>not avilable....</td>
                         <td><a href="#" class="justify-center px-3 py-2
                             lg:px-4 lg:py-3 bg-emerald-700 text-gray-200
                             text-xs font-semibold rounded
                             hover:bg-emerald-500 hover:text-white text-lg ">View</a></td>
-                        <td>not started</td>
                     </tr>
                     <!-- and so on... -->
                 </tbody>
@@ -142,10 +146,26 @@
         </div>
         <br>
         <hr>
+        <div class="container d-flex justify-content-center">
+            <span id="day">00</span>
+            <span>:</span>
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+            <br>
+            <br>
+            <!-- <span >you are </span>
+            <span id="current"></span> -->
+        </div>
         <script src="https://cdn.tailwindcss.com"></script>
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> -->
         </script>
-        <script src="bundle.js"></script>
+        <!-- <script src="bundle.js"></script> -->
+        <!-- <script src="time.js"> -->
+        <script src="time.js"></script>
+        </script>
     </body>
     </head>
 
