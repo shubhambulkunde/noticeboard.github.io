@@ -67,7 +67,7 @@ submitData.addEventListener('click', (e) => {
             // Signed in
             const user = userCredential.user;
             
-            window.location = 'home.html';
+            window.location = 'show_board.html';
             // save log in details into real time database
             var lgDate = new Date();
             update(ref(database, 'users/' + user.uid), {
